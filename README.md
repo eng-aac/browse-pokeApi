@@ -4,4 +4,4 @@
 
 **powered by**
 
-[![mecanizados|aac](assets/aldo_castillo_mecanizados.jpg)](github.com/mecanizados-aac/)
+[![mecanizados|aac](assets/img/aldo_castillo_mecanizados.jpg)](github.com/mecanizados-aac/)
