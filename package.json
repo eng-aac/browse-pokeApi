@@ -1,0 +1,20 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "> _This repository constitutes the frontend, of the api example-firt._",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mecanizados-aac/front-first_repository.git"
+  },
+  "keywords": [],
+  "author": "Aldo Adrián Castillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mecanizados-aac/front-first_repository/issues"
+  },
+  "homepage": "https://github.com/mecanizados-aac/front-first_repository#readme"
+}

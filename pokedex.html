@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles-pokedex.css" />
   </head>
   <body>
     <header>
@@ -41,23 +42,26 @@
     </header>
     
     <main id="main">
-            <div class="input-component container">
-                <h3>Get ready to fight...</h3>
-                <div class="inputs">
-                    <div class="input-pokemon">
-                        <input type="text" id="pokemon-name" class="input-pokemon-name" placeholder="Capture your Pokemon..." onkeypress="handleKeyPress(event)">
-                    </div>
-                    <label class="hide container" id="input-component-error">Error</label>
-                </div>
+      <h3>Pokedex</h3>
+
+      <div class="container-card container" id="container-card">
+        <div class="card container" id="">
+          <div class="card-body">
+            <div class="container-buttons">
+              <button id="delete-pokemon">
+                <i class="fas fa-backspace"></i>
+              </button>
             </div>
 
-            <div class="container-buttons container">
-                    <input type="button" value="Choose You" class="button" id="get-pokemons">
-                    <input type="button" value="Don't Catch" class="button" id="clean-pokemons">
-                    <input type="button" value="Come Back" class="button" id="back-pokemons">
-            </div>
-          
-            <div class="container-card container" id="container-card"></div>  
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="image-profile-pokemon" class="img-pokemon">
+            <h5>Order: </h5>
+            <h4>Name: </h4>
+            <p>Base Experience: </p>
+            <p class="text-type">Type: </p>
+            <a href="" class="add-pokemon">Add to Team</a>
+          </div>
+        </div>
+      </div>       
     </main>
 
     <footer>
@@ -67,6 +71,6 @@
 
     <script src="https://kit.fontawesome.com/c79d7afd86.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src=""></script>
   </body>
 </html>

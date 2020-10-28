@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles-team_player.css" />
   </head>
   <body>
     <header>
@@ -41,23 +42,60 @@
     </header>
     
     <main id="main">
-            <div class="input-component container">
-                <h3>Get ready to fight...</h3>
-                <div class="inputs">
-                    <div class="input-pokemon">
-                        <input type="text" id="pokemon-name" class="input-pokemon-name" placeholder="Capture your Pokemon..." onkeypress="handleKeyPress(event)">
-                    </div>
-                    <label class="hide container" id="input-component-error">Error</label>
-                </div>
-            </div>
+      <h3>Player´s</h3>
 
-            <div class="container-buttons container">
-                    <input type="button" value="Choose You" class="button" id="get-pokemons">
-                    <input type="button" value="Don't Catch" class="button" id="clean-pokemons">
-                    <input type="button" value="Come Back" class="button" id="back-pokemons">
-            </div>
-          
-            <div class="container-card container" id="container-card"></div>  
+      <div class="container-buttons-add container">
+        <button id="add-team">
+          <i class="fas fa-plus"></i>
+          Add Player
+        </button>
+      </div>
+
+      <table class="table-team-player container">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Image Profile</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <td>Aldo</td>
+            <td>Castillo</td>
+            <td></td>
+            <td>
+              <div class="container-buttons">
+                <button id="edit-player">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button id="delete-player">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>Tadeo</td>
+            <td>Riveros</td>
+            <td></td>
+            <td>
+              <div class="container-buttons">
+                <button id="edit-player">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button id="delete-player">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </td>
+        </tr>
+        </tbody>
+      </table>    
     </main>
 
     <footer>
@@ -67,6 +105,6 @@
 
     <script src="https://kit.fontawesome.com/c79d7afd86.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src=""></script>
   </body>
 </html>
