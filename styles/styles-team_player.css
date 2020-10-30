@@ -77,21 +77,119 @@ h3{
     cursor: pointer;
 }
 
-#add-player, #add-team{
+#add-element, #submit-player{
     border: 3px solid #28a745;
     color: #28a745;
     padding: 5px 10px 5px 10px;
     border-radius: 8px;
 }
 
-#add-player:hover, #add-team:hover{
+#add-element:hover,  #submit-player:hover{
     background: #28a745;
     border: 3px solid #28a745;
     color: white;
     cursor: pointer;
 }
 
+#clean-player{
+    border: 3px solid #dc3545;
+    color: #dc3545;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+}
+
+#clean-player:hover{
+    background: #dc3545;
+    border: 3px solid #dc3545;
+    color: white;
+    cursor: pointer;
+}
+
 i{
     padding-top: 2px;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    min-height: 50vh;
+    align-content: center;
+    background: rgba(0,0,0,.85);
+    position: fixed;
+    top: 10vh;
+    left: 20vh;
+    z-index: 1000000;
+    display: none;
+}
+
+.modal__content{
+    display: block;
+    height: 67.5vh;
+    background: E9E9E9;
+}
+
+.inputs label{
+    display: block;
+}
+
+
+.modal__content h3{
+    margin-top: 80px;
+}
+
+#label-name{
+    margin-top: 0;
+}
+
+.container__form{
+    display: flex;
+    justify-content: center;
+}
+
+.modal__form{
+    width: 50%;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid darkslateblue;
+    padding: 30px 70px 20px 70px;
+}
+
+.input-player, .input-team{
+    width: 97%;
+    border-radius: 5px;
+    background: white;
+    border: 3px solid darkslateblue;
+}
+
+.container-buttons-form{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    height: 35px; 
+}
+
+.modal-form-buttons-add{
+    margin-right: 20px;
+}
+
+.modal__button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    background: darkslateblue;
+    font-size: 2.5em;
+    text-align: center;
+    border-radius: 50%;
+    font-family: sans-serif; 
+}
+
+.modal--open{
+    display: block;
 }
 

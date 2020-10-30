@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOME | PokeApi's</title>
+    <title>Team´s | PokeApi's</title>
     <link rel="icon" type="image/ico" href="assets/img/favicon.ico" sizes="" />
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
@@ -45,11 +45,38 @@
         <h3>Team´s</h3>
 
         <div class="container-buttons-add container">
-          <button id="add-team">
+          <button id="add-element">
             <i class="fas fa-plus"></i>
             Add Team
           </button>
         </div>
+
+        <section class="modal" id="modal">
+          <div class="modal__content">
+            <h3>Add to Team</h3>
+            <div class="container__form">
+              <form class="modal__form">
+  
+                <div class="inputs">
+                  <label for="" id="label-name">Player</label>
+                  <input type="text" class="input-team" id="" placeholder="Enter the team´s player">
+      
+                  <label form="">Pokemon</label>
+                  <input type="text" class="input-team" id="" placeholder="Enter the team´s pokemon">
+      
+                  <label form="">Nickname</label>
+                  <input type="text" class="input-team" id="" placeholder="Enter the team´s nickname">
+                </div>
+               
+                <div class="container-buttons-form">
+                  <button type="submit" class="modal-form-buttons-add" id="submit-player">Submit</button>
+                  <button type="reset" class="modal-form-buttons-reset" id="clean-player">Reset</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal__button" id="modal__button">x</div>
+        </section> 
 
         <table class="table-team-player container">
             <thead>
@@ -105,6 +132,6 @@
 
     <script src="https://kit.fontawesome.com/c79d7afd86.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src=""></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>
