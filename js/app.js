@@ -18,8 +18,10 @@ const retrievePokemon = async () => {
     if (name) {
         try {
             rawData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-            displayCard(rawData.data.sprites.front_default, rawData.data.order, rawData.data.name, 
-                        rawData.data.base_experience,  rawData.data.types[0].type.name);   
+            displayCard(rawData.data.sprites.other['official-artwork'].front_default, 
+                        rawData.data.id, rawData.data.name, 
+                        rawData.data.base_experience,  
+                        rawData.data.types[0].type.name);   
                         
             const labelError =  document.getElementById('input-component-error');
             labelError.innerHTML = 'This is correct!';
@@ -43,15 +45,34 @@ const retrievePokemon = async () => {
 
 } */
 
+const background_colors = {
+    fire: '#FDDFDF',
+    grass: '#DEFDE0',
+    electric: '#FCF7DE',
+    water: '#DEF3FD',
+    ground: '#F4E7DA',
+    rock: '#D5D5D4',
+    fairy: '#FCEAFF',
+    poison: '#98D7A5',
+    bug: '#F8D5A3',
+    dragon: '#97B3E6',
+    psychic: '#EAEDA1',
+    flying: '#F5F5F5',
+    fighting: '#E6E0D4',
+    normal: '#F5F5F5'
+}
+
 let count = 0;
 
-const displayCard = (url, attibuteOrder, attibuteName, attibuteExperience, attibuteType) => {
+const displayCard = (url, attibuteId, attibuteName, attibuteExperience, attibuteType) => {
 
     document.getElementById('back-pokemons').disabled = false;
+    const color = background_colors[attibuteType];
 
     let card = document.createElement('div');
     card.className = 'card container';
     card.id = 'card-' + count;
+    card.style.background = color;
     const mainBody = document.getElementById('container-card');
     mainBody.appendChild(card);
 
@@ -61,49 +82,46 @@ const displayCard = (url, attibuteOrder, attibuteName, attibuteExperience, attib
     const mainCard = document.getElementById('card-' + count);
     mainCard.appendChild(cardBody);
 
+    const imgContainer = document.createElement('div');
+    imgContainer.className = 'img-container';
+    imgContainer.id = 'img-container-' + count;
+    // obtener elemento del DOM
+    const divBody = document.getElementById('card-body-' + count);
+    divBody.appendChild(imgContainer);
+
     // crear nodo tipo img
     const imgElement = document.createElement('img');
     // agregar atributos
     imgElement.className = 'img-pokemon';
     imgElement.id = 'img-pokemon-' + count;
     imgElement.setAttribute('src', url);
+    const divContainerImg = document.getElementById('img-container-' + count);
+    divContainerImg.appendChild(imgElement);
     
     const orderPokemon = document.createElement('h5');
-    orderPokemon.innerHTML = 'Order: ' + attibuteOrder;
+    orderPokemon.innerHTML = 'Id: ' + attibuteId;
+    orderPokemon.className = 'order-pokemon';
     orderPokemon.id = 'order-pokemon-' + count;
 
     const title = document.createElement('h4');
     title.innerHTML = 'Name: ' + attibuteName;
     title.id = 'title' + count;
 
-    const textExperience = document.createElement('p');
-    textExperience.innerHTML = 'Base Experience: ' + attibuteExperience;
-    textExperience.id = 'text-experience-' + count;
-
-    const textOrder = document.createElement('p');
-    textOrder.innerHTML = 'Order: ' + attibuteOrder;
-    textOrder.id = 'text-order-' + count;
-
     const textType = document.createElement('p');
     textType.innerHTML = 'Type: ' + attibuteType;
     textType.id = 'text-type-' + count; 
     textType.className = 'text-type'; 
 
-    const addPokemon = document.createElement('a');
-    addPokemon.innerHTML = 'Add to Pokedex';
-    addPokemon.id = 'add-pokemon-' + count; 
-    addPokemon.className = 'add-pokemon'; 
-    addPokemon.setAttribute('href', '*');
+    const textExperience = document.createElement('p');
+    textExperience.innerHTML = 'Base Experience: ' + attibuteExperience;
+    textExperience.id = 'text-experience-' + count;
+    textExperience.className = 'text-experience'; 
 
-    // obtener elemento del DOM
-    const divBody = document.getElementById('card-body-' + count);
     // agregar el nodo al div
-    divBody.appendChild(imgElement);
     divBody.appendChild(orderPokemon);
     divBody.appendChild(title);
-    divBody.appendChild(textExperience);
     divBody.appendChild(textType);
-    divBody.appendChild(addPokemon);
+    divBody.appendChild(textExperience);
 
     count++; 
 
